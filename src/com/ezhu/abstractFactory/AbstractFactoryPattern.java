@@ -5,6 +5,16 @@ import com.ezhu.factory.Shape;
 
 public class AbstractFactoryPattern {
 
+	/*
+	 * 1、创建各种接口--Shape、Color等；
+	 * 2、创建实现接口的实体类 --Rectangle、Red等；
+	 * 3、为接口对象创建抽象类来获取工厂--AbstractFactory；
+	 * 4、创建扩展了 AbstractFactory 的工厂类，基于给定的信息生成实体类的对象--ShapeFactory、ColorFactory等； 
+	 * 5、创建一个工厂创造器/生成器类（FactoryProducer），通过传递颜色/形状信息来获取工厂；
+	 * 6、通过FactoryProducer来获取AbstractFactory，通过传递类型信息来获取实体类对象；
+	 * 7、验证输出。
+	 */
+	
 	public static void main(String[] args) {
 
 		// 获取形状工厂
