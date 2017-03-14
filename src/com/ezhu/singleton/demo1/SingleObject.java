@@ -1,4 +1,4 @@
-package com.ezhu.singleton;
+package com.ezhu.singleton.demo1;
 
 /**
  * 步骤1：创建一个 Singleton 类

@@ -1,4 +1,4 @@
-package com.ezhu.singleton;
+package com.ezhu.singleton.demo1;
 
 /**
  * 懒汉式，线程安全

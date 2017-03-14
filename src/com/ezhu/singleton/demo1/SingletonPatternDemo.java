@@ -1,4 +1,4 @@
-package com.ezhu.singleton;
+package com.ezhu.singleton.demo1;
 
 public class SingletonPatternDemo {
 	public static void main(String[] args) {

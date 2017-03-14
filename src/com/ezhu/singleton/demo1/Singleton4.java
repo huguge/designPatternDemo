@@ -1,4 +1,4 @@
-package com.ezhu.singleton;
+package com.ezhu.singleton.demo1;
 
 /**
  * 双检锁/双重校验锁 (double-checking locking)
