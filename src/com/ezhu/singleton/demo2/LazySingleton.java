@@ -15,7 +15,12 @@ public class LazySingleton {
 
 	public static LazySingleton getInstance() {
 		if (instance == null) {
-			instance = new LazySingleton();
+			// 第一次编写的
+//			instance = new LazySingleton();
+			// 作一定的改进
+			synchronized (LazySingleton.class) {
+				instance = new LazySingleton();
+			}
 		}
 		return instance;
 	}
