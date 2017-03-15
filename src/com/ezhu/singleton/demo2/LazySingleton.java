@@ -14,12 +14,28 @@ public class LazySingleton {
 	}
 
 	public static LazySingleton getInstance() {
-		if (instance == null) {
-			// 第一次编写的
+		
+		// 第一次编写的
+//		if (instance == null) {
 //			instance = new LazySingleton();
-			// 作一定的改进
+//		}
+		
+		// 作一定的改进
+//		if (instance == null) {
+//			synchronized (LazySingleton.class) {
+//				instance = new LazySingleton();
+//			}
+//		}
+		
+		// 完整代码 - 双重检查锁定懒汉式单例
+		// 第一重判断
+		if (instance == null) {
+			// 锁定代码块
 			synchronized (LazySingleton.class) {
-				instance = new LazySingleton();
+				// 第二重判断
+				if (instance == null) {
+					instance = new LazySingleton();// 创建单例实例
+				}
 			}
 		}
 		return instance;
