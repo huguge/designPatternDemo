@@ -7,7 +7,8 @@ package com.ezhu.singleton.demo2;
  */
 public class LazySingleton {
 
-	private static LazySingleton instance = null;
+//	private static LazySingleton instance = null;
+	private volatile static LazySingleton instance = null;// 双重检查锁定增加volatile修饰符
 
 	private LazySingleton() {
 
