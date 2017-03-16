@@ -77,6 +77,26 @@ class Director extends Approver {
 	}
 }
 
+// 新增经理类
+// 经理类：具体处理者
+class Manager extends Approver {
+
+	public Manager(String name) {
+		super(name);
+	}
+
+	@Override
+	public void processRequest(PurchaseRequest request) {
+		if (request.getAmout() < 80000) {
+			System.out.println("经理" + this.name + "审批采购单："
+					+ request.getNumber() + ",金额：" + request.getAmout()
+					+ "元，采购目的：" + request.getPurpose() + "。");// 处理请求
+		} else {
+			this.processRequest(request);// 转发请求给后继者
+		}
+	}
+}
+
 // 副董事长：具体处理者
 class VicePresident extends Approver {
 
