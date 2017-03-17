@@ -72,7 +72,7 @@ class Director extends Approver {
 					+ request.getNumber() + ",金额：" + request.getAmout()
 					+ "元，采购目的：" + request.getPurpose() + "。");// 处理请求
 		} else {
-			this.processRequest(request);// 转发请求给后继者
+			this.successor.processRequest(request);// 转发请求给后继者
 		}
 	}
 }
@@ -92,7 +92,7 @@ class Manager extends Approver {
 					+ request.getNumber() + ",金额：" + request.getAmout()
 					+ "元，采购目的：" + request.getPurpose() + "。");// 处理请求
 		} else {
-			this.processRequest(request);// 转发请求给后继者
+			this.successor.processRequest(request);// 转发请求给后继者
 		}
 	}
 }
@@ -111,7 +111,7 @@ class VicePresident extends Approver {
 					+ request.getNumber() + ",金额：" + request.getAmout()
 					+ "元，采购目的：" + request.getPurpose() + "。");// 处理请求
 		} else {
-			this.processRequest(request);
+			this.successor.processRequest(request);
 		}
 	}
 }
@@ -130,7 +130,7 @@ class President extends Approver {
 					+ request.getNumber() + ",金额：" + request.getAmout()
 					+ "元，采购目的：" + request.getPurpose() + "。");// 处理请求
 		} else {
-			this.processRequest(request);
+			this.successor.processRequest(request);
 		}
 	}
 }

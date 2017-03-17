@@ -44,6 +44,11 @@ public class Client {
 			副董事长tony审批采购单：1002,金额：99999.0元，采购目的：租一间写字间。
 			董事长jack审批采购单：1003,金额：490000.0元，采购目的：买一间写字楼。
 			召开董事会审批采购单1004,金额：1000000.0元，采购目的：买一间公司。
+			
+			昨天写的还是有问题的：具体处理者类中的当前人员无法处理，需要传递给后继者，
+			后继者继续执行processRequest()方法，但是我这里else的代码是 this.processRequest(request); 
+			这个还是让他去处理，但是他处理不了，所以造成 Exception in thread "main" java.lang.StackOverflowError 的错误
+			今天我再看人家的代码是 this.successor.processRequest(request); 是有一个让后继者去处理的代码，还是粗心了。
 		 */
 		
 	}
