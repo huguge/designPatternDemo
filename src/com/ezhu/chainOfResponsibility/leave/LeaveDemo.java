@@ -6,10 +6,13 @@ public class LeaveDemo {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.err.println("请输入请假天数：");
-		int num = Integer.parseInt(scanner.nextLine());
+		int days;
+		String purpose;
+		System.err.print("请输入请假天数：");
+		days = scanner.nextInt();
+		System.err.print("请输入请假理由：");
+		purpose = scanner.next();
 		
-		System.err.println("num+++++++++"+num);
 		
 		Approver tom, tony, jack, li;
 		tom = new Director("tom");
@@ -22,20 +25,13 @@ public class LeaveDemo {
 		tony.setSuccessor(jack);
 		jack.setSuccessor(li);
 		
-		LeaveRequest lr1 = new LeaveRequest(num, "请假理由稍后再写");
-		tom.processRequest(lr1);
-		
-		LeaveRequest lr2 = new LeaveRequest(num, "请假理由稍后再写");
-		tony.processRequest(lr2);
-		
-		LeaveRequest lr3 = new LeaveRequest(num, "请假理由稍后再写");
-		jack.processRequest(lr3);
-		
-		LeaveRequest lr4 = new LeaveRequest(num, "请假理由稍后再写");
-		li.processRequest(lr4);
+		LeaveRequest lr = new LeaveRequest(days, purpose);
+		tom.processRequest(lr);
 		
 		//@output:抛出错误：Exception in thread "main" java.lang.StackOverflowError
 		// 明天解决。
+		
+		// 解决了，原因是当前处理者自己处理不好，因为代码原因，无法传递给后继者。
 		
 	}
 

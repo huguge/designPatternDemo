@@ -8,7 +8,9 @@ public class OtherProcess extends Approver {
 
 	@Override
 	public void processRequest(LeaveRequest request) {
-		System.err.println("请假日期过长，不通过！");
+		if (request.getDayNumber() > 30) {
+			System.err.println("请假日期过长，不通过！");
+		}
 	}
 
 }
